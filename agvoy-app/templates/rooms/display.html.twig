@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ message }} Display Page{% endblock %}
+
+{% block body %}
+<p>This is the {{message}} display page for the room</p>
+<p>To see the {{otherMessage}} display page, <a href={{link}}>Click Here</a></p>
+<p><a href="http://localhost:8000/agvoy">Return to main page</a></p>
+{% endblock %}
