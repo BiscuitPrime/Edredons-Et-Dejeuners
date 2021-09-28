@@ -9,3 +9,9 @@ Initialisation sur github réalisée : 28 sept. 11h18
 Création de la branche BiscuitOne
 Delete of BiscuitOne branch
 Creation of BiscuitTwo Branch
+
+Added public and private display rooms
+Todo :
+ - Display room in public display
+ - add some new rooms etc to the data
+ - add an authentification system of some sort ?
