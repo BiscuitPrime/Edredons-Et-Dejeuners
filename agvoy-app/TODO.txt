@@ -3,3 +3,5 @@ RESSOURCES/CAHIER DES CHARGES : https://www-inf.telecom-sudparis.eu/COURS/CSC410
 TP1 : Initialisation : https://www-inf.telecom-sudparis.eu/COURS/CSC4101/hp-2-3/
 
 proj3 à faire
+
+Initialisation sur github réalisée : 28 sept. 11h18
