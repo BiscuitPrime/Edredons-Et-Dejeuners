@@ -44,3 +44,7 @@ b23862,127.0.0.1,GET,http://localhost:8000/agvoy,1632825903,,200
 385dec,127.0.0.1,GET,http://localhost:8000/agvoy,1632825945,,200
 805972,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1632825952,,200
 35b93d,127.0.0.1,GET,http://localhost:8000/agvoy,1632825954,,200
+285118,127.0.0.1,GET,http://localhost:8000/agvoy,1632826839,,200
+72b6d6,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1632826843,,200
+590934,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1632826845,,200
+3d050e,127.0.0.1,GET,http://localhost:8000/agvoy,1632826847,,200

@@ -13,7 +13,7 @@ Creation of BiscuitTwo Branch
 Added public and private display rooms
 Main has been updated
 Todo :
-    WORK ON BISCUIT TWO
+    WORK ON NEW BRANCH (to be created)
  - Display room in public display
  - add some new rooms etc to the data
  - add an authentification system of some sort ?
