@@ -4,11 +4,13 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use App\Entity\Room;
+use App\Entity\Region;
 
 class AppFixtures extends Fixture
 {
     // On définit l'id de référence pour une instance de région
-    public const ID_REGION_REFERENCE = 'id-region';
+    public const IDF_REGION_REFERENCE = 'id-region';
 
     public function load(ObjectManager $manager)
     {

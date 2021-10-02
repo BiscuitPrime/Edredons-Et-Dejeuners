@@ -4,6 +4,25 @@
 
 {% block body %}
 <p>This is the {{message}} display page for the room</p>
+<p>The list of the different rooms :</p>
+<table class="table">
+<thead>
+    <tr>
+        <th>Room Id</th>
+        <th>Room Summary</th>
+        <th>Room Owner</th>
+    </tr>
+</thead>
+<tbody>
+    {% for room in rooms %}
+    <tr>
+        <td>{{room.id}}</td>
+        <td>{{room.summary}}</td>
+        <td>{{room.owner}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
 <p>To see the {{otherMessage}} display page, <a href={{link}}>Click Here</a></p>
 <p><a href="http://localhost:8000/agvoy">Return to main page</a></p>
 {% endblock %}

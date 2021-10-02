@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Room;
+use App\Entity\Region;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,7 +29,10 @@ class AgvoyController extends AbstractController
      */
     public function publicShow()
     {
-        return $this->render('rooms/display.html.twig',['message'=>"Public", 'otherMessage'=>"Private", 'link'=>"http://localhost:8000/agvoy/private_room_show"]);
+        $em=$this->getDoctrine()->getManager();
+        $rooms=$em->getRepository(Room::class)->findAll();
+        dump($rooms);
+        return $this->render('rooms/display.html.twig',['message'=>"Public", 'otherMessage'=>"Private", 'link'=>"http://localhost:8000/agvoy/private_room_show", 'rooms' => $rooms]);
     }
 
     /**
@@ -37,6 +42,6 @@ class AgvoyController extends AbstractController
      */
     public function privateShow()
     {
-        return $this->render('rooms/display.html.twig',['message'=>"Private", 'otherMessage'=>"Public", 'link'=>"http://localhost:8000/agvoy/public_room_show"]);
+        return $this->render('rooms/display.html.twig',['message'=>"Private", 'otherMessage'=>"Public", 'link'=>"http://localhost:8000/agvoy/public_room_show", 'rooms'=>0]);
     }
 }

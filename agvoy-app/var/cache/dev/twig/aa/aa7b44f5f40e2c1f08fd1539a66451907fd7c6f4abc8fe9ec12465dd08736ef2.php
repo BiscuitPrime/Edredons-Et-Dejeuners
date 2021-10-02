@@ -89,11 +89,49 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
         echo "<p>This is the ";
         echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 6, $this->source); })()), "html", null, true);
         echo " display page for the room</p>
+<p>The list of the different rooms :</p>
+<table class=\"table\">
+<thead>
+    <tr>
+        <th>Room Id</th>
+        <th>Room Summary</th>
+        <th>Room Region</th>
+    </tr>
+</thead>
+<tbody>
+    ";
+        // line 17
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new RuntimeError('Variable "rooms" does not exist.', 17, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
+            // line 18
+            echo "    <tr>
+        <td>";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", [], "any", false, false, false, 19), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "summary", [], "any", false, false, false, 20), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "regions", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+    </tr>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 24
+        echo "</tbody>
+</table>
 <p>To see the ";
-        // line 7
-        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 7, $this->source); })()), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 26, $this->source); })()), "html", null, true);
         echo " display page, <a href=";
-        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 7, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 26, $this->source); })()), "html", null, true);
         echo ">Click Here</a></p>
 <p><a href=\"http://localhost:8000/agvoy\">Return to main page</a></p>
 ";
@@ -117,7 +155,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
     public function getDebugInfo()
     {
-        return array (  94 => 7,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 26,  128 => 24,  119 => 21,  115 => 20,  111 => 19,  108 => 18,  104 => 17,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -128,6 +166,25 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
 {% block body %}
 <p>This is the {{message}} display page for the room</p>
+<p>The list of the different rooms :</p>
+<table class=\"table\">
+<thead>
+    <tr>
+        <th>Room Id</th>
+        <th>Room Summary</th>
+        <th>Room Region</th>
+    </tr>
+</thead>
+<tbody>
+    {% for room in rooms %}
+    <tr>
+        <td>{{room.id}}</td>
+        <td>{{room.summary}}</td>
+        <td>{{room.regions}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
 <p>To see the {{otherMessage}} display page, <a href={{link}}>Click Here</a></p>
 <p><a href=\"http://localhost:8000/agvoy\">Return to main page</a></p>
 {% endblock %}", "rooms/display.html.twig", "/home/nomico/CSC4101/proj-agvoy/agvoy-app/templates/rooms/display.html.twig");

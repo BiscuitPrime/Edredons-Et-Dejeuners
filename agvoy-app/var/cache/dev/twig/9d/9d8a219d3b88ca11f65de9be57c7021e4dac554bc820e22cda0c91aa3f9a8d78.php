@@ -65,7 +65,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello AgvoyController!";
+        echo "Project Agvoy";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -86,6 +86,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
         // line 6
         echo "<p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
+<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/agvoy/public_room_show\">here</a>.</p>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -114,10 +115,11 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello AgvoyController!{% endblock %}
+{% block title %}Project Agvoy{% endblock %}
 
 {% block body %}
 <p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
+<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/agvoy/public_room_show\">here</a>.</p>
 {% endblock %}
 ", "agvoy/index.html.twig", "/home/nomico/CSC4101/proj-agvoy/agvoy-app/templates/agvoy/index.html.twig");
     }

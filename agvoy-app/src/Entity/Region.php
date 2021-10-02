@@ -35,13 +35,14 @@ class Region
     private $country;
 
     /**
-     * @ORM\OneToMany(targetEntity=Room::class, mappedBy="region")
+     * @ORM\ManyToMany(targetEntity=Room::class, mappedBy="regions")
      */
-    private $room;
+    private $rooms;
 
     public function __construct()
     {
         $this->room = new ArrayCollection();
+        $this->rooms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -88,16 +89,16 @@ class Region
     /**
      * @return Collection|Room[]
      */
-    public function getRoom(): Collection
+    public function getRooms(): Collection
     {
-        return $this->room;
+        return $this->rooms;
     }
 
     public function addRoom(Room $room): self
     {
-        if (!$this->room->contains($room)) {
-            $this->room[] = $room;
-            $room->setRegion($this);
+        if (!$this->rooms->contains($room)) {
+            $this->rooms[] = $room;
+            $room->addRegion($this);
         }
 
         return $this;
@@ -105,11 +106,8 @@ class Region
 
     public function removeRoom(Room $room): self
     {
-        if ($this->room->removeElement($room)) {
-            // set the owning side to null (unless already changed)
-            if ($room->getRegion() === $this) {
-                $room->setRegion(null);
-            }
+        if ($this->rooms->removeElement($room)) {
+            $room->removeRegion($this);
         }
 
         return $this;

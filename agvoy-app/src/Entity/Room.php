@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RoomRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,41 +25,46 @@ class Room
     private $summary;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $capacity;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $superficy;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $address;
 
     /**
      * @ORM\ManyToOne(targetEntity=Owner::class, inversedBy="room")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $owner;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="room")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToMany(targetEntity=Region::class, inversedBy="rooms", cascade={"persist"})
      */
-    private $region;
+    private $regions;
+
+    public function __construct()
+    {
+        $this->regions = new ArrayCollection();
+    }
+
+    
 
     public function getId(): ?int
     {
@@ -148,14 +155,26 @@ class Room
         return $this;
     }
 
-    public function getRegion(): ?Region
+    /**
+     * @return Collection|Region[]
+     */
+    public function getRegions(): Collection
     {
-        return $this->region;
+        return $this->regions;
     }
 
-    public function setRegion(?Region $region): self
+    public function addRegion(Region $region): self
     {
-        $this->region = $region;
+        if (!$this->regions->contains($region)) {
+            $this->regions[] = $region;
+        }
+
+        return $this;
+    }
+
+    public function removeRegion(Region $region): self
+    {
+        $this->regions->removeElement($region);
 
         return $this;
     }
