@@ -17,3 +17,10 @@ Todo :
  - Display room in public display
  - add some new rooms etc to the data
  - add an authentification system of some sort ?
+
+Rooms are now displayed on the public_room_show
+Todo :
+- la consultation d’une liste d’annonces de Couette et cafés présents dans une région donnée;
+la consultation d’une annonce d’un Couette et Café particulier.
+- add some new rooms etc to the data
+- add an authentification system of some sort ?

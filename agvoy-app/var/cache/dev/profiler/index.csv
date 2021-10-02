@@ -117,3 +117,16 @@ ad5062,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633199511,,2
 158f0d,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199514,,200
 5ffa68,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633199516,,200
 dca95d,127.0.0.1,GET,http://localhost:8000/agvoy,1633199518,,200
+c056a1,127.0.0.1,GET,http://localhost:8000/todo/,1633199879,a87b8b,404
+a87b8b,127.0.0.1,GET,http://localhost:8000/todo/,1633199879,,404
+e2522a,127.0.0.1,GET,http://localhost:8000/agvoy,1633199886,,200
+00c885,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199888,,200
+c77a0a,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633199890,,200
+947458,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199891,,200
+fbcbe8,127.0.0.1,GET,http://localhost:8000/agvoy,1633199892,,200
+6a646b,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633200122,,200
+5db37c,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633200123,,200
+337ffb,127.0.0.1,GET,http://localhost:8000/agvoy,1633200172,,200
+fb1d5d,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633200175,,200
+412429,127.0.0.1,GET,http://localhost:8000/agvoy/room_show,1633200176,,200
+cca2fd,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633200177,,200

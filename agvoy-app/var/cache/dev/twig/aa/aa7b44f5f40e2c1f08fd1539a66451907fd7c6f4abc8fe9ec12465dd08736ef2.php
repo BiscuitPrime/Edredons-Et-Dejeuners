@@ -55,7 +55,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,7 +65,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 3, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 4, $this->source); })()), "html", null, true);
         echo " Display Page";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -75,7 +75,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -85,9 +85,9 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         echo "<p>This is the ";
-        echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["message"]) || array_key_exists("message", $context) ? $context["message"] : (function () { throw new RuntimeError('Variable "message" does not exist.', 7, $this->source); })()), "html", null, true);
         echo " display page for the room</p>
 <p>The list of the different rooms :</p>
 <table class=\"table\">
@@ -100,23 +100,23 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 </thead>
 <tbody>
     ";
-        // line 17
+        // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new RuntimeError('Variable "rooms" does not exist.', 17, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["rooms"]) || array_key_exists("rooms", $context) ? $context["rooms"] : (function () { throw new RuntimeError('Variable "rooms" does not exist.', 18, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["room"]) {
-            // line 18
+            // line 19
             echo "    <tr>
         <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", [], "any", false, false, false, 19), "html", null, true);
-            echo "</td>
-        <td>";
             // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "summary", [], "any", false, false, false, 20), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "id", [], "any", false, false, false, 20), "html", null, true);
             echo "</td>
         <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "owner", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "summary", [], "any", false, false, false, 21), "html", null, true);
+            echo "</td>
+        <td>";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "owner", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
     </tr>
     ";
@@ -124,14 +124,14 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['room'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 25
         echo "</tbody>
 </table>
 <p>To see the ";
-        // line 26
-        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 26, $this->source); })()), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 27, $this->source); })()), "html", null, true);
         echo " display page, <a href=";
-        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 26, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 27, $this->source); })()), "html", null, true);
         echo ">Click Here</a></p>
 <p><a href=\"http://localhost:8000/agvoy\">Return to main page</a></p>
 ";
@@ -155,12 +155,13 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
     public function getDebugInfo()
     {
-        return array (  132 => 26,  128 => 24,  119 => 21,  115 => 20,  111 => 19,  108 => 18,  104 => 17,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  132 => 27,  128 => 25,  119 => 22,  115 => 21,  111 => 20,  108 => 19,  104 => 18,  89 => 7,  79 => 6,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+{#This page is used by the public display room#}
 
 {% block title %}{{ message }} Display Page{% endblock %}
 

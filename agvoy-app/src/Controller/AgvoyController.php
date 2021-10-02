@@ -32,13 +32,13 @@ class AgvoyController extends AbstractController
         $em=$this->getDoctrine()->getManager();
         $rooms=$em->getRepository(Room::class)->findAll();
         dump($rooms);
-        return $this->render('rooms/display.html.twig',['message'=>"Public", 'otherMessage'=>"Private", 'link'=>"http://localhost:8000/agvoy/private_room_show", 'rooms' => $rooms]);
+        return $this->render('rooms/display.html.twig',['message'=>"Public", 'otherMessage'=>"Private", 'link'=>"http://localhost:8000/agvoy/room_show", 'rooms' => $rooms]);
     }
 
     /**
      * Private version of a room
      * 
-     * @Route("agvoy/private_room_show", name="private_room_show", methods="GET")
+     * @Route("agvoy/room_show", name="room_show", methods="GET")
      */
     public function privateShow()
     {

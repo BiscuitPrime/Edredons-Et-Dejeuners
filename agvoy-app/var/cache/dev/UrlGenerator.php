@@ -17,5 +17,5 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     'agvoy' => [[], ['_controller' => 'App\\Controller\\AgvoyController::index'], [], [['text', '/agvoy']], [], []],
     'public_room_show' => [[], ['_controller' => 'App\\Controller\\AgvoyController::publicShow'], [], [['text', '/agvoy/public_room_show']], [], []],
-    'private_room_show' => [[], ['_controller' => 'App\\Controller\\AgvoyController::privateShow'], [], [['text', '/agvoy/private_room_show']], [], []],
+    'room_show' => [[], ['_controller' => 'App\\Controller\\AgvoyController::privateShow'], [], [['text', '/agvoy/room_show']], [], []],
 ];

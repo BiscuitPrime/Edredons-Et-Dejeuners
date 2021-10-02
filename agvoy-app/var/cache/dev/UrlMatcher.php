@@ -15,7 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agvoy' => [[['_route' => 'agvoy', '_controller' => 'App\\Controller\\AgvoyController::index'], null, null, null, false, false, null]],
         '/agvoy/public_room_show' => [[['_route' => 'public_room_show', '_controller' => 'App\\Controller\\AgvoyController::publicShow'], null, ['GET' => 0], null, false, false, null]],
-        '/agvoy/private_room_show' => [[['_route' => 'private_room_show', '_controller' => 'App\\Controller\\AgvoyController::privateShow'], null, ['GET' => 0], null, false, false, null]],
+        '/agvoy/room_show' => [[['_route' => 'room_show', '_controller' => 'App\\Controller\\AgvoyController::privateShow'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

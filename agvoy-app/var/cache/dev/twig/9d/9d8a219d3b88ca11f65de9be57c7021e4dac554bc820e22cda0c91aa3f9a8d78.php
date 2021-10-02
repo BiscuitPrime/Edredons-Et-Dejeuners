@@ -55,7 +55,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -74,7 +74,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +84,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         echo "<p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
 <p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/agvoy/public_room_show\">here</a>.</p>
 ";
@@ -108,12 +108,13 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  88 => 7,  78 => 6,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+{#This page is used by the main Page#}
 
 {% block title %}Project Agvoy{% endblock %}
 
