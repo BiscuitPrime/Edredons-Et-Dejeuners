@@ -110,3 +110,10 @@ b148ec,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199005,,20
 049727,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199385,,500
 a25d84,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199394,6451d0,500
 6451d0,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199394,,500
+0aa303,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199508,,200
+ad5062,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633199511,,200
+316c77,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199512,,200
+8f2baf,127.0.0.1,GET,http://localhost:8000/agvoy,1633199513,,200
+158f0d,127.0.0.1,GET,http://localhost:8000/agvoy/public_room_show,1633199514,,200
+5ffa68,127.0.0.1,GET,http://localhost:8000/agvoy/private_room_show,1633199516,,200
+dca95d,127.0.0.1,GET,http://localhost:8000/agvoy,1633199518,,200

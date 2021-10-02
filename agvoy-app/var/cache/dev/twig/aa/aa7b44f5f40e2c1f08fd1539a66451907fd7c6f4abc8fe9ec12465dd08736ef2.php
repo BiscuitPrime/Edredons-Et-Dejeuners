@@ -95,7 +95,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
     <tr>
         <th>Room Id</th>
         <th>Room Summary</th>
-        <th>Room Region</th>
+        <th>Room Owner</th>
     </tr>
 </thead>
 <tbody>
@@ -116,7 +116,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
             echo "</td>
         <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "regions", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["room"], "owner", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
     </tr>
     ";
@@ -172,7 +172,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
     <tr>
         <th>Room Id</th>
         <th>Room Summary</th>
-        <th>Room Region</th>
+        <th>Room Owner</th>
     </tr>
 </thead>
 <tbody>
@@ -180,7 +180,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
     <tr>
         <td>{{room.id}}</td>
         <td>{{room.summary}}</td>
-        <td>{{room.regions}}</td>
+        <td>{{room.owner}}</td>
     </tr>
     {% endfor %}
 </tbody>
