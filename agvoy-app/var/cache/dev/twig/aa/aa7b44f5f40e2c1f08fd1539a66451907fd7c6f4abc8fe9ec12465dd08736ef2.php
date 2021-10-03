@@ -127,11 +127,55 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
         // line 25
         echo "</tbody>
 </table>
+
+<p>Here's the list of the different regions :</p>
+<table class=\"table\">
+    <thead>
+        <tr>
+            <th>Region Id</th>
+            <th>Region Name</th>
+            <th>Region Presentation</th>
+            <th>Region Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        ";
+        // line 39
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["regions"]) || array_key_exists("regions", $context) ? $context["regions"] : (function () { throw new RuntimeError('Variable "regions" does not exist.', 39, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["region"]) {
+            // line 40
+            echo "        <tr>
+            <td>";
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["region"], "id", [], "any", false, false, false, 41), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["region"], "name", [], "any", false, false, false, 42), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 43
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["region"], "presentation", [], "any", false, false, false, 43), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["region"], "country", [], "any", false, false, false, 44), "html", null, true);
+            echo "</td>
+        </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['region'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 47
+        echo "    </tbody>
+    </table>
 <p>To see the ";
-        // line 27
-        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 27, $this->source); })()), "html", null, true);
+        // line 49
+        echo twig_escape_filter($this->env, (isset($context["otherMessage"]) || array_key_exists("otherMessage", $context) ? $context["otherMessage"] : (function () { throw new RuntimeError('Variable "otherMessage" does not exist.', 49, $this->source); })()), "html", null, true);
         echo " display page, <a href=";
-        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 27, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["link"]) || array_key_exists("link", $context) ? $context["link"] : (function () { throw new RuntimeError('Variable "link" does not exist.', 49, $this->source); })()), "html", null, true);
         echo ">Click Here</a></p>
 <p><a href=\"http://localhost:8000/agvoy\">Return to main page</a></p>
 ";
@@ -155,7 +199,7 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
 
     public function getDebugInfo()
     {
-        return array (  132 => 27,  128 => 25,  119 => 22,  115 => 21,  111 => 20,  108 => 19,  104 => 18,  89 => 7,  79 => 6,  59 => 4,  36 => 1,);
+        return array (  176 => 49,  172 => 47,  163 => 44,  159 => 43,  155 => 42,  151 => 41,  148 => 40,  144 => 39,  128 => 25,  119 => 22,  115 => 21,  111 => 20,  108 => 19,  104 => 18,  89 => 7,  79 => 6,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,6 +230,28 @@ class __TwigTemplate_a7239be17f43f545c54a2fb4fda6493bcf7adbd812a0ae761d55a204f68
     {% endfor %}
 </tbody>
 </table>
+
+<p>Here's the list of the different regions :</p>
+<table class=\"table\">
+    <thead>
+        <tr>
+            <th>Region Id</th>
+            <th>Region Name</th>
+            <th>Region Presentation</th>
+            <th>Region Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for region in regions %}
+        <tr>
+            <td>{{region.id}}</td>
+            <td>{{region.name}}</td>
+            <td>{{region.presentation}}</td>
+            <td>{{region.country}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
 <p>To see the {{otherMessage}} display page, <a href={{link}}>Click Here</a></p>
 <p><a href=\"http://localhost:8000/agvoy\">Return to main page</a></p>
 {% endblock %}", "rooms/display.html.twig", "/home/nomico/CSC4101/proj-agvoy/agvoy-app/templates/rooms/display.html.twig");
