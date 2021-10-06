@@ -64,7 +64,15 @@ class Room
         $this->regions = new ArrayCollection();
     }
 
-    
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $s='';
+        $s .= $this->getId() .' '. $this->getSummary() .' '. $this->getDescription() .' '. $this->getCapacity() .' '. $this->getSuperficy() .' '. $this->getPrice() .' '. $this->getAddress();
+        return $s;
+    }
 
     public function getId(): ?int
     {

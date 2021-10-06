@@ -31,6 +31,7 @@ class __TwigTemplate_ac8d4e90a911f648823c4b66f9cb077e52ac2bf768d637c37ff482ba9de
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -69,6 +70,12 @@ class __TwigTemplate_ac8d4e90a911f648823c4b66f9cb077e52ac2bf768d637c37ff482ba9de
         $this->displayBlock('body', $context, $blocks);
         // line 18
         echo "    </body>
+    <footer>
+        ";
+        // line 20
+        $this->displayBlock('footer', $context, $blocks);
+        // line 24
+        echo "    </footer>
 </html>
 ";
         
@@ -160,6 +167,28 @@ class __TwigTemplate_ac8d4e90a911f648823c4b66f9cb077e52ac2bf768d637c37ff482ba9de
 
     }
 
+    // line 20
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        echo " 
+        <p>To return to the Main Page, please click <a href=\"http://localhost:8000/agvoy\">here</a></p> 
+        <p>To return to the Region List, please click <a href=\"http://localhost:8000/backoffice/region/list\">here</a></p> 
+        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -167,7 +196,7 @@ class __TwigTemplate_ac8d4e90a911f648823c4b66f9cb077e52ac2bf768d637c37ff482ba9de
 
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  171 => 20,  153 => 17,  143 => 14,  141 => 13,  131 => 12,  121 => 10,  119 => 9,  109 => 8,  90 => 5,  78 => 24,  76 => 20,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -190,6 +219,12 @@ class __TwigTemplate_ac8d4e90a911f648823c4b66f9cb077e52ac2bf768d637c37ff482ba9de
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+        {% block footer %} 
+        <p>To return to the Main Page, please click <a href=\"http://localhost:8000/agvoy\">here</a></p> 
+        <p>To return to the Region List, please click <a href=\"http://localhost:8000/backoffice/region/list\">here</a></p> 
+        {% endblock %}
+    </footer>
 </html>
 ", "base.html.twig", "/home/nomico/CSC4101/proj-agvoy/agvoy-app/templates/base.html.twig");
     }

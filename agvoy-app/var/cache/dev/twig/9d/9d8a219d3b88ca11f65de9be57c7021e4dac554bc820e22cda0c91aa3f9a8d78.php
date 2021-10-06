@@ -27,6 +27,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -86,8 +87,26 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
         // line 7
         echo "<p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
-<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/agvoy/public_room_show\">here</a>.</p>
+<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/room/list\">here</a>.</p>
 ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 11
+    public function block_footer($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -108,7 +127,7 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
     public function getDebugInfo()
     {
-        return array (  88 => 7,  78 => 6,  59 => 4,  36 => 1,);
+        return array (  101 => 11,  89 => 7,  79 => 6,  60 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -120,8 +139,10 @@ class __TwigTemplate_cda95371bfe910801f5b7fe622050b23a650e8b77cc8619b9b225fbb74a
 
 {% block body %}
 <p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
-<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/agvoy/public_room_show\">here</a>.</p>
+<p>To access the <strong>Public Rooms</strong>, please click <a href=\"http://localhost:8000/room/list\">here</a>.</p>
 {% endblock %}
+
+{% block footer %}{% endblock %}
 ", "agvoy/index.html.twig", "/home/nomico/CSC4101/proj-agvoy/agvoy-app/templates/agvoy/index.html.twig");
     }
 }

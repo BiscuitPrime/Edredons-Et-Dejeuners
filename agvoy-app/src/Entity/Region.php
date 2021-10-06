@@ -45,6 +45,16 @@ class Region
         $this->rooms = new ArrayCollection();
     }
 
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $s='';
+        $s .= $this->getId() .' '. $this->getName() .' '. $this->getPresentation() .' '. $this->getCountry();
+        return $s;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
