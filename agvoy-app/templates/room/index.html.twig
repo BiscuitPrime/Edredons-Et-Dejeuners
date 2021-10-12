@@ -28,7 +28,10 @@
                 <td>{{ room.address }}</td>
                 <td>
                     <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>show</a>
+                    {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-secondary'>edit</a>
+                    {% endif %}
+                
                 </td>
             </tr>
         {% else %}
@@ -39,7 +42,9 @@
         </tbody>
     </table>
 
+    {% if is_granted('ROLE_USER') %}
     <div align='center'>
     <a href="{{ path('room_new') }}" class='btn btn-outline-dark'>Create new</a>
     </div>
+    {% endif %}
 {% endblock %}

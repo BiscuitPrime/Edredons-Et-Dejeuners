@@ -31,4 +31,6 @@ return [
     'room_show' => [['id'], ['_controller' => 'App\\Controller\\RoomController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
     'room_edit' => [['id'], ['_controller' => 'App\\Controller\\RoomController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
     'room_delete' => [['id'], ['_controller' => 'App\\Controller\\RoomController::delete'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

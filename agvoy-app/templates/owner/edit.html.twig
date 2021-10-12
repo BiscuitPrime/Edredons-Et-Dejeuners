@@ -1,12 +1,16 @@
-{% extends 'backoffice.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}Edit Owner{% endblock %}
 
 {% block body %}
     <h1>Edit Owner</h1>
 
+    {% if is_granted('ROLE_ADMIN') %}
     {{ include('owner/_form.html.twig', {'button_label': 'Update'}) }}
-
+    {% endif %}
+    
     <a href="{{ path('owner_index') }}" class='btn btn-outline-primary'>back to list</a>
 
+    {% if is_granted('ROLE_ADMIN') %}
     {{ include('owner/_delete_form.html.twig') }}
+    {% endif %}
 {% endblock %}

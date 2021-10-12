@@ -8,9 +8,9 @@ bootstrap_menu:
         regionList:
           label: 'Region List'
           route: 'region_index'
-        ownerList:
-          label: 'Owner List'
-          route: 'owner_index'
+        login:
+          label: 'Login'
+          route: 'app_login'
     backoffice:
       items:
         roomList:
@@ -22,5 +22,11 @@ bootstrap_menu:
         ownerList:
           label: 'Owner List'
           route: 'owner_index'
+        logout:
+          label: 'Logout'
+          route: 'app_logout'
+          roles: ['ROLE_USER']
+
+
 
         

@@ -1,5 +1,4 @@
-{% extends 'backoffice.html.twig' %}
-
+{% extends 'base.html.twig' %}
 {% block title %}Owner index{% endblock %}
 
 {% block body %}
@@ -26,7 +25,9 @@
                 <td>{{ owner.country }}</td>
                 <td>
                     <a href="{{ path('owner_show', {'id': owner.id}) }}" class='btn btn-outline-primary'>show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('owner_edit', {'id': owner.id}) }}" class='btn btn-outline-secondary'>edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -37,7 +38,9 @@
         </tbody>
     </table>
 
+    {% if is_granted('ROLE_ADMIN') %}
     <div align='center'>
     <a href="{{ path('owner_new') }}" class='btn btn-outline-dark'>Create new</a>
-    </div>    
+    </div> 
+    {% endif %}   
 {% endblock %}
