@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class OwnerController extends AbstractController
 {
     /**
-     * @Route("/", name="owner_index", methods={"GET"})
+     * @Route("/list", name="owner_index", methods={"GET"})
      */
     public function index(OwnerRepository $ownerRepository): Response
     {

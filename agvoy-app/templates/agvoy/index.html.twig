@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 {#This page is used by the main Page#}
 
-{% block title %}Project Agvoy{% endblock %}
+{% block title %}Édredons & Déjeuners{% endblock %}
 
 {% block body %}
-<p>This is the start of the <strong>Couettes & Dejeuners</strong> project</p>
-<p>To access the <strong>Public Rooms</strong>, please click <a href="http://localhost:8000/room/list">here</a>.</p>
+<h3 align='center'>Bienvenue à l'agence Édredons & Déjeuners</h3>
+<br>
+<div align='center'>
+{% for room in rooms %}
+    <p>{{ room.summary}}</p>
+{% endfor %}
+</div>
 {% endblock %}
-
-{% block footer %}{% endblock %}

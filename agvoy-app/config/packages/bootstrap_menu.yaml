@@ -1,0 +1,26 @@
+bootstrap_menu:
+  menus:
+    main:
+      items:
+        roomList:
+          label: 'Room List'
+          route: 'room_index'
+        regionList:
+          label: 'Region List'
+          route: 'region_index'
+        ownerList:
+          label: 'Owner List'
+          route: 'owner_index'
+    backoffice:
+      items:
+        roomList:
+          label: 'Room List'
+          route: 'room_index'
+        regionList:
+          label: 'Region List'
+          route: 'region_index'
+        ownerList:
+          label: 'Owner List'
+          route: 'owner_index'
+
+        

@@ -23,17 +23,19 @@
                 <td>{{ region.presentation }}</td>
                 <td>{{ region.country }}</td>
                 <td>
-                    <a href="{{ path('region_show', {'id': region.id}) }}">show</a>
-                    <a href="{{ path('region_edit', {'id': region.id}) }}">edit</a>
+                    <a href="{{ path('region_show', {'id': region.id}) }}" class='btn btn-outline-primary'>show</a>
+                    <a href="{{ path('region_edit', {'id': region.id}) }}" class='btn btn-outline-secondary'>edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucunes régions trouvées - Vous vivez sur Mars ?</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('region_new') }}">Create new</a>
+    <div align='center'>
+    <a href="{{ path('region_new') }}" class='btn btn-outline-dark'>Create new</a>
+    </div>
 {% endblock %}

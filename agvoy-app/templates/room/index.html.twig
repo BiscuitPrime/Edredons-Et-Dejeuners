@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Summary</th>
                 <th>Description</th>
                 <th>Capacity</th>
@@ -21,7 +20,6 @@
         <tbody>
         {% for room in rooms %}
             <tr>
-                <td>{{ room.id }}</td>
                 <td>{{ room.summary }}</td>
                 <td>{{ room.description }}</td>
                 <td>{{ room.capacity }}</td>
@@ -29,8 +27,8 @@
                 <td>{{ room.price }}</td>
                 <td>{{ room.address }}</td>
                 <td>
-                    <a href="{{ path('room_show', {'id': room.id}) }}">show</a>
-                    <a href="{{ path('room_edit', {'id': room.id}) }}">edit</a>
+                    <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>show</a>
+                    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-secondary'>edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +39,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('room_new') }}">Create new</a>
+    <div align='center'>
+    <a href="{{ path('room_new') }}" class='btn btn-outline-dark'>Create new</a>
+    </div>
 {% endblock %}

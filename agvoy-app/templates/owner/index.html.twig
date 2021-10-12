@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backoffice.html.twig' %}
 
 {% block title %}Owner index{% endblock %}
 
@@ -25,8 +25,8 @@
                 <td>{{ owner.adress }}</td>
                 <td>{{ owner.country }}</td>
                 <td>
-                    <a href="{{ path('owner_show', {'id': owner.id}) }}">show</a>
-                    <a href="{{ path('owner_edit', {'id': owner.id}) }}">edit</a>
+                    <a href="{{ path('owner_show', {'id': owner.id}) }}" class='btn btn-outline-primary'>show</a>
+                    <a href="{{ path('owner_edit', {'id': owner.id}) }}" class='btn btn-outline-secondary'>edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('owner_new') }}">Create new</a>
+    <div align='center'>
+    <a href="{{ path('owner_new') }}" class='btn btn-outline-dark'>Create new</a>
+    </div>    
 {% endblock %}

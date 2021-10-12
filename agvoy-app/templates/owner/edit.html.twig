@@ -1,5 +1,4 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'backoffice.html.twig' %}
 {% block title %}Edit Owner{% endblock %}
 
 {% block body %}
@@ -7,7 +6,7 @@
 
     {{ include('owner/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('owner_index') }}">back to list</a>
+    <a href="{{ path('owner_index') }}" class='btn btn-outline-primary'>back to list</a>
 
     {{ include('owner/_delete_form.html.twig') }}
 {% endblock %}
