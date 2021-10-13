@@ -21,13 +21,13 @@ class AgvoyController extends AbstractController
         $rooms = $em->getRepository(Room::class)->findAll();
         
         dump($rooms);
-
+        $em = $this->getDoctrine()->getManager();
+        $regions = $em->getRepository(Region::class)->findAll();
+        dump($regions);
         $regionNameList=[];
-        foreach ($rooms as $room){
-            if (! is_null($room->getRegions())){
-                foreach($room->getRegions() as $region)
-                    $regionList[]=$region->getName();
-            }
+
+        foreach ($regions as $region){
+            $regionList[]=$region->getName();
         }
 
         $regionNameSelected=null;
@@ -49,15 +49,15 @@ class AgvoyController extends AbstractController
         $rooms = $em->getRepository(Room::class)->findAll();
         
         dump($rooms);
-
+        $em = $this->getDoctrine()->getManager();
+        $regions = $em->getRepository(Region::class)->findAll();
+        dump($regions);
         $regionNameList=[];
-        foreach ($rooms as $room){
-            if (! is_null($room->getRegions())){
-                foreach($room->getRegions() as $region)
-                    $regionList[]=$region->getName();
-            }
-        }
         
+        foreach ($regions as $region){
+            $regionList[]=$region->getName();
+        }
+
         return $this->render('agvoy/index.html.twig', [
             'controller_name' => 'AgvoyController',
             'rooms' => $rooms,
