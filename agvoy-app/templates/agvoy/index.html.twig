@@ -13,17 +13,17 @@
 {% for room in rooms %}
     {% for region in room.regions %}
         {% if (regionSelected is null) %}
-            <p>{{ room.summary}}</p>
-            {% endif %}
+            <p><a href="{{path('room_show', {'id':room.id})}}">{{ room.summary}}</a></p>
+        {% endif %}
         {% if (region.name == regionSelected) %}
-            <p>{{ room.summary}}</p>
+            <p><a href="{{path('room_show', {'id':room.id})}}">{{ room.summary}}</a></p>
         {% endif %}
     {% endfor %}
 {% endfor %}
 
 {% endblock %}
 {% block footer %}
-<p><u>Region List :</u></p>
+<h3><u>Liste des Régions :</u></h3>
 {% for regionName in regions %}
 <a href="{{ path('agvoy_region', { 'regionNameSelected': regionName}) }}" class='btn btn-outline-primary'>{{regionName}}</a>
 {% endfor %}

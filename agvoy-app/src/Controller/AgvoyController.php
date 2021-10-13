@@ -75,17 +75,17 @@ class AgvoyController extends AbstractController
         $rooms = $em->getRepository(Room::class)->findAll();
         
         dump($rooms);
-        $urgents = $this->get('session')->get('urgents');
+        $basket = $this->get('session')->get('basket');
         
         $roomBasketList=[];
         $message='Aucun édredon sélectionné :(';
-        if (is_null($urgents)){
-            $urgents=array();
+        if (is_null($basket)){
+            $basket=array();
         }
         else
         {
             foreach ($rooms as $room){
-                if(in_array($room->getId(),$urgents)){
+                if(in_array($room->getId(),$basket)){
                     $roomBasketList[]=$room;
                 }
             }

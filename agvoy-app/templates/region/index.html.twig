@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Region index{% endblock %}
+{% block title %}Liste des Régions{% endblock %}
 
 {% block body %}
-    <h1>Region index</h1>
+    <h1>Liste des Régions</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Presentation</th>
-                <th>Country</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Présentation</th>
+                <th>Pays</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +23,9 @@
                 <td>{{ region.presentation }}</td>
                 <td>{{ region.country }}</td>
                 <td>
-                    <a href="{{ path('region_show', {'id': region.id}) }}" class='btn btn-outline-primary'>show</a>
+                    <a href="{{ path('region_show', {'id': region.id}) }}" class='btn btn-outline-primary'>Détails</a>
                     {% if is_granted('ROLE_ADMIN')%}
-                    <a href="{{ path('region_edit', {'id': region.id}) }}" class='btn btn-outline-secondary'>edit</a>
+                    <a href="{{ path('region_edit', {'id': region.id}) }}" class='btn btn-outline-secondary'>Modifier</a>
                     {% endif %}
                 </td>
             </tr>
@@ -39,7 +39,7 @@
 
     {% if is_granted('ROLE_ADMIN')%}
     <div align='center'>
-    <a href="{{ path('region_new') }}" class='btn btn-outline-dark'>Create new</a>
+    <a href="{{ path('region_new') }}" class='btn btn-outline-dark'>Créer une nouvelle région</a>
     </div>
     {% endif %}
 {% endblock %}

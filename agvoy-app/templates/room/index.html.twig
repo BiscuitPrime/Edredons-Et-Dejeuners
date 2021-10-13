@@ -1,24 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Room index{% endblock %}
+{% block title %}Liste des Édredons{% endblock %}
+
 
 {% block body %}
-    <h1>Room index</h1>
+    <h1>Liste des Édredons disponibles :</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Summary</th>
+                <th>Résumé</th>
                 <th>Description</th>
-                <th>Capacity</th>
-                <th>Superficy</th>
-                <th>Price</th>
-                <th>Address</th>
-                <th>actions</th>
+                <th>Capacité</th>
+                <th>Superficie</th>
+                <th>Prix</th>
+                <th>Addresse</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for room in rooms %}
+            {% set basket = app.session.get('basket') %}
+            {% dump(basket) %}
+            {% if room.id in basket %}
+            <tr style="background-color:rgb(255, 193, 79);">
+                <td>{{ room.summary }}</td>
+                <td>{{ room.description }}</td>
+                <td>{{ room.capacity }}</td>
+                <td>{{ room.superficy }}</td>
+                <td>{{ room.price }}</td>
+                <td>{{ room.address }}</td>
+                <td>
+                    <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-primary'>Détails</a>
+                    {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-secondary'>Modifier</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% else %}
             <tr>
                 <td>{{ room.summary }}</td>
                 <td>{{ room.description }}</td>
@@ -27,24 +46,20 @@
                 <td>{{ room.price }}</td>
                 <td>{{ room.address }}</td>
                 <td>
-                    <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>show</a>
+                    <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>Détails</a>
                     {% if is_granted('ROLE_USER') %}
-                    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-secondary'>edit</a>
+                    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-secondary'>Modifier</a>
                     {% endif %}
-                
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
+            {% endif %}
         {% endfor %}
         </tbody>
     </table>
 
     {% if is_granted('ROLE_USER') %}
     <div align='center'>
-    <a href="{{ path('room_new') }}" class='btn btn-outline-dark'>Create new</a>
+    <a href="{{ path('room_new') }}" class='btn btn-outline-dark'>Ajouter un nouvel édredon</a>
     </div>
     {% endif %}
 {% endblock %}

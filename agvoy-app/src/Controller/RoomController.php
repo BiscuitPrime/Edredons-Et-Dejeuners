@@ -38,6 +38,7 @@ class RoomController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($room);
             $entityManager->flush();
@@ -105,28 +106,28 @@ class RoomController extends AbstractController
     public function markAction(Room $room): Response
     {
         dump($room);
-        $urgents = $this->get('session')->get('urgents');
+        $basket = $this->get('session')->get('basket');
         $id=$room->getId();
 
         $MessagePanier='Ajouter au panier';
 
-        if (is_null($urgents)){
-            $urgents=array();
+        if (is_null($basket)){
+            $basket=array();
         }
-        // si l'identifiant n'est pas présent dans le tableau des urgents, l'ajouter
-        if (! in_array($id, $urgents) ) 
+        // si l'identifiant n'est pas présent dans le tableau des basket, l'ajouter
+        if (! in_array($id, $basket) ) 
         {
-            $urgents[] = $id;
+            $basket[] = $id;
         }
         else
         // sinon, le retirer du tableau
         {
-            $urgents = array_diff($urgents, array($id));
+            $basket = array_diff($basket, array($id));
             $MessagePanier='Enlever du panier';
         }
-        $this->get('session')->set('urgents', $urgents);
+        $this->get('session')->set('basket', $basket);
 
-        return $this->redirectToRoute('room_show', 
+        return $this->redirectToRoute('room_index', 
         ['id' => $room->getId()]);
     }
 }

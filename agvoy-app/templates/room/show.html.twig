@@ -1,42 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Room{% endblock %}
+{% block title %}Édredon{% endblock %}
 
 {% block body %}
-    <h1>Room</h1>
+    <h1>Détails de l'édredon</h1>
 
     <table class="table">
         <tbody>
+            <tr>
+                <th></th>
+                <td><img src="{{ vich_uploader_asset(room, 'imageFile') }}"/></td>
+            </tr>
             <tr>
                 <th>Id</th>
                 <td>{{ room.id }}</td>
             </tr>
             <tr>
-                <th>Summary</th>
+                <th>Résumé</th>
                 <td>{{ room.summary }}</td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Déscription</th>
                 <td>{{ room.description }}</td>
             </tr>
             <tr>
-                <th>Capacity</th>
+                <th>Capacité</th>
                 <td>{{ room.capacity }}</td>
             </tr>
             <tr>
-                <th>Superficy</th>
+                <th>Superficie</th>
                 <td>{{ room.superficy }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ room.price }}</td>
             </tr>
             <tr>
-                <th>Address</th>
+                <th>Addresse</th>
                 <td>{{ room.address }}</td>
             </tr>
             <tr>
-                <th>Owner</th>
+                <th>Propriétaire</th>
                 {% if room.owner is null %}
                 <td>No registered Owner</td>
                 {% else %}
@@ -44,7 +48,7 @@
                 {% endif %}
             </tr>
             <tr>
-                <th>Region(s)</th>
+                <th>Région(s)</th>
                 {% if room.regions is null %}
                 <td>No registered Region</td>
                 {% else %}
@@ -60,15 +64,15 @@
 
     <div align='center'>
     <br>
-    <a href="{{ path('room_index') }}" class='btn btn-outline-dark'>back to list</a>
+    <a href="{{ path('room_index') }}" class='btn btn-outline-dark'>Retour à la liste</a>
     {% if is_granted('ROLE_USER') %}
-    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-success'>edit</a>
+    <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-success'>Modifier</a>
     {% endif %}
     </div>
 
-    {% set urgents = app.session.get('urgents') %}
-    {% dump(urgents) %}
-    {% if room.id in urgents %}
+    {% set basket = app.session.get('basket') %}
+    {% dump(basket) %}
+    {% if room.id in basket %}
     <h3>    Etablissement ajouté au panier</h3>
     <a href="{{ path('room_mark', {'id':room.id})}}" class='btn btn-outline-warning'>Enlever du panier</a>
     {% else %}

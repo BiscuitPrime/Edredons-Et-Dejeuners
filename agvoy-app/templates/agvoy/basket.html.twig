@@ -1,7 +1,35 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <p><h1 align='center'>{{Message}}</h1></p>
-{% for room in rooms %}
-<p>{{room.summary}}</p>
-{% endfor %}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Summary</th>
+            <th>Description</th>
+            <th>Capacity</th>
+            <th>Superficy</th>
+            <th>Price</th>
+            <th>Address</th>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for room in rooms %}
+        <tr>
+            <td>{{ room.summary }}</td>
+            <td>{{ room.description }}</td>
+            <td>{{ room.capacity }}</td>
+            <td>{{ room.superficy }}</td>
+            <td>{{ room.price }}</td>
+            <td>{{ room.address }}</td>
+            <td>
+                <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>show</a>
+                <a href="{{ path('room_mark', {'id':room.id})}}" class='btn btn-outline-warning'>Enlever du panier</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}
