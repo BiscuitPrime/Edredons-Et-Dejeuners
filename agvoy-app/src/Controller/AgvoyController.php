@@ -65,4 +65,35 @@ class AgvoyController extends AbstractController
             'regionSelected'=>$regionNameSelected,
         ]);
     }
+
+    /**
+     * @Route("/basket", name="basket", methods="GET")
+     */
+    public function basket() : Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $rooms = $em->getRepository(Room::class)->findAll();
+        
+        dump($rooms);
+        $urgents = $this->get('session')->get('urgents');
+        
+        $roomBasketList=[];
+        $message='Aucun édredon sélectionné :(';
+        if (is_null($urgents)){
+            $urgents=array();
+        }
+        else
+        {
+            foreach ($rooms as $room){
+                if(in_array($room->getId(),$urgents)){
+                    $roomBasketList[]=$room;
+                }
+            }
+            $message='Les édredons que vous avez sélectionnés :';
+        }
+        return $this->render('agvoy/basket.html.twig', [
+            'rooms'=>$roomBasketList,
+            'Message'=>$message
+        ]);
+    }
 }

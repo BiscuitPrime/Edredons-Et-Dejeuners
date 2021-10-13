@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     'agvoy' => [[], ['_controller' => 'App\\Controller\\AgvoyController::index'], [], [['text', '/agvoy']], [], []],
     'agvoy_region' => [['regionNameSelected'], ['_controller' => 'App\\Controller\\AgvoyController::listName'], [], [['variable', '/', '[^/]++', 'regionNameSelected'], ['text', '/agvoy']], [], []],
+    'basket' => [[], ['_controller' => 'App\\Controller\\AgvoyController::basket'], [], [['text', '/basket']], [], []],
     'owner_index' => [[], ['_controller' => 'App\\Controller\\OwnerController::index'], [], [['text', '/backoffice/owner/list']], [], []],
     'owner_new' => [[], ['_controller' => 'App\\Controller\\OwnerController::new'], [], [['text', '/backoffice/owner/new']], [], []],
     'owner_show' => [['id'], ['_controller' => 'App\\Controller\\OwnerController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/backoffice/owner']], [], []],
@@ -32,6 +33,7 @@ return [
     'room_show' => [['id'], ['_controller' => 'App\\Controller\\RoomController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
     'room_edit' => [['id'], ['_controller' => 'App\\Controller\\RoomController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
     'room_delete' => [['id'], ['_controller' => 'App\\Controller\\RoomController::delete'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/room']], [], []],
+    'room_mark' => [['id'], ['_controller' => 'App\\Controller\\RoomController::markAction'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id'], ['text', '/room/mark']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

@@ -37,15 +37,23 @@
             </tr>
             <tr>
                 <th>Owner</th>
+                {% if room.owner is null %}
+                <td>No registered Owner</td>
+                {% else %}
                 <td>{{ room.owner.Firstname }} {{room.owner.Familyname }}</td>
+                {% endif %}
             </tr>
             <tr>
                 <th>Region(s)</th>
+                {% if room.regions is null %}
+                <td>No registered Region</td>
+                {% else %}
                 <td>
                 {% for region in room.regions %}
                     {{region.name}}<br>
                 {% endfor %}
                 </td>
+                {% endif %}
             </tr>
         </tbody>
     </table>
@@ -57,6 +65,15 @@
     <a href="{{ path('room_edit', {'id': room.id}) }}" class='btn btn-outline-success'>edit</a>
     {% endif %}
     </div>
+
+    {% set urgents = app.session.get('urgents') %}
+    {% dump(urgents) %}
+    {% if room.id in urgents %}
+    <h3>    Etablissement ajouté au panier</h3>
+    <a href="{{ path('room_mark', {'id':room.id})}}" class='btn btn-outline-warning'>Enlever du panier</a>
+    {% else %}
+    <a href="{{ path('room_mark', {'id':room.id})}}" class='btn btn-outline-warning'>Ajouter au panier</a>
+    {% endif %}
 
     {% if is_granted('ROLE_USER')%}
     {{ include('room/_delete_form.html.twig') }}

@@ -6,6 +6,7 @@
 {% block body %}
 <h3 align='center'>Bienvenue à l'agence Édredons & Déjeuners</h3>
 <br>
+<h4 align='center'><i>Annonces par régions :</i></h4>
 <div align='center'>
 <h4><i>{{regionSelected}}</i></h4>
 <br>
@@ -23,7 +24,6 @@
 {% endblock %}
 {% block footer %}
 <p><u>Region List :</u></p>
-
 {% for regionName in regions %}
 <a href="{{ path('agvoy_region', { 'regionNameSelected': regionName}) }}" class='btn btn-outline-primary'>{{regionName}}</a>
 {% endfor %}

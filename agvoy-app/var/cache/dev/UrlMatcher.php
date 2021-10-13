@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/agvoy' => [[['_route' => 'agvoy', '_controller' => 'App\\Controller\\AgvoyController::index'], null, null, null, false, false, null]],
+        '/basket' => [[['_route' => 'basket', '_controller' => 'App\\Controller\\AgvoyController::basket'], null, ['GET' => 0], null, false, false, null]],
         '/backoffice/owner/list' => [[['_route' => 'owner_index', '_controller' => 'App\\Controller\\OwnerController::index'], null, ['GET' => 0], null, false, false, null]],
         '/backoffice/owner/new' => [[['_route' => 'owner_new', '_controller' => 'App\\Controller\\OwnerController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/backoffice/region/list' => [[['_route' => 'region_index', '_controller' => 'App\\Controller\\RegionController::index'], null, ['GET' => 0], null, false, false, null]],
@@ -53,10 +54,13 @@ return [
                         .'|(*:293)'
                     .')'
                 .')'
-                .'|/room/([^/]++)(?'
-                    .'|(*:320)'
-                    .'|/edit(*:333)'
-                    .'|(*:341)'
+                .'|/room/(?'
+                    .'|([^/]++)(?'
+                        .'|(*:323)'
+                        .'|/edit(*:336)'
+                        .'|(*:344)'
+                    .')'
+                    .'|mark/(\\d+)(*:363)'
                 .')'
             .')/?$}sD',
     ],
@@ -75,10 +79,11 @@ return [
         272 => [[['_route' => 'region_show', '_controller' => 'App\\Controller\\RegionController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         285 => [[['_route' => 'region_edit', '_controller' => 'App\\Controller\\RegionController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         293 => [[['_route' => 'region_delete', '_controller' => 'App\\Controller\\RegionController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        320 => [[['_route' => 'room_show', '_controller' => 'App\\Controller\\RoomController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        333 => [[['_route' => 'room_edit', '_controller' => 'App\\Controller\\RoomController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        341 => [
-            [['_route' => 'room_delete', '_controller' => 'App\\Controller\\RoomController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        323 => [[['_route' => 'room_show', '_controller' => 'App\\Controller\\RoomController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        336 => [[['_route' => 'room_edit', '_controller' => 'App\\Controller\\RoomController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        344 => [[['_route' => 'room_delete', '_controller' => 'App\\Controller\\RoomController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        363 => [
+            [['_route' => 'room_mark', '_controller' => 'App\\Controller\\RoomController::markAction'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

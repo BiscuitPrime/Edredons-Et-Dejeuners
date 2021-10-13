@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<p><h1 align='center'>{{Message}}</h1></p>
+{% for room in rooms %}
+<p>{{room.summary}}</p>
+{% endfor %}
+{% endblock %}

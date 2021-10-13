@@ -96,4 +96,37 @@ class RoomController extends AbstractController
 
         return $this->redirectToRoute('room_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+    * Mark a room as "marked" (so that the client will remember it) - they will be put in a panier
+    * 
+    * @Route("/mark/{id}", name="room_mark", requirements={ "id": "\d+"}, methods="GET")
+    */
+    public function markAction(Room $room): Response
+    {
+        dump($room);
+        $urgents = $this->get('session')->get('urgents');
+        $id=$room->getId();
+
+        $MessagePanier='Ajouter au panier';
+
+        if (is_null($urgents)){
+            $urgents=array();
+        }
+        // si l'identifiant n'est pas présent dans le tableau des urgents, l'ajouter
+        if (! in_array($id, $urgents) ) 
+        {
+            $urgents[] = $id;
+        }
+        else
+        // sinon, le retirer du tableau
+        {
+            $urgents = array_diff($urgents, array($id));
+            $MessagePanier='Enlever du panier';
+        }
+        $this->get('session')->set('urgents', $urgents);
+
+        return $this->redirectToRoute('room_show', 
+        ['id' => $room->getId()]);
+    }
 }
