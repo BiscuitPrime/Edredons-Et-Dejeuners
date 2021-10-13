@@ -10,5 +10,11 @@
 {% for room in rooms %}
     <p>{{ room.summary}}</p>
 {% endfor %}
-</div>
+
+<p>Region List :</p>
+
+{% for regionName in regions %}
+<button class='btn btn-primary'>{{regionName}}</button>
+{% endfor %}
+
 {% endblock %}

@@ -22,9 +22,18 @@ class AgvoyController extends AbstractController
         
         dump($rooms);
 
+        $regionNameList=[];
+        foreach ($rooms as $room){
+            if (! is_null($room->getRegions())){
+                foreach($room->getRegions() as $region)
+                    $regionList[]=$region->getName();
+            }
+        }
+
         return $this->render('agvoy/index.html.twig', [
             'controller_name' => 'AgvoyController',
             'rooms' => $rooms,
+            'regions' => $regionList,
         ]);
     }
 }
