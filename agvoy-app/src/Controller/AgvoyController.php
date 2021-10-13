@@ -30,10 +30,39 @@ class AgvoyController extends AbstractController
             }
         }
 
+        $regionNameSelected=null;
+
         return $this->render('agvoy/index.html.twig', [
             'controller_name' => 'AgvoyController',
             'rooms' => $rooms,
             'regions' => $regionList,
+            'regionSelected'=>$regionNameSelected,
+        ]);
+    }
+
+    /**
+     * @Route("/agvoy/{regionNameSelected}", name="agvoy_region")
+     */
+    public function listName(String $regionNameSelected):Response
+    {
+        $em = $this->getDoctrine()->getManager();
+        $rooms = $em->getRepository(Room::class)->findAll();
+        
+        dump($rooms);
+
+        $regionNameList=[];
+        foreach ($rooms as $room){
+            if (! is_null($room->getRegions())){
+                foreach($room->getRegions() as $region)
+                    $regionList[]=$region->getName();
+            }
+        }
+        
+        return $this->render('agvoy/index.html.twig', [
+            'controller_name' => 'AgvoyController',
+            'rooms' => $rooms,
+            'regions' => $regionList,
+            'regionSelected'=>$regionNameSelected,
         ]);
     }
 }

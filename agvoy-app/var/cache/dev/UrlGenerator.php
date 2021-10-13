@@ -16,6 +16,7 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token'], ['text', '/_profiler']], [], []],
     'agvoy' => [[], ['_controller' => 'App\\Controller\\AgvoyController::index'], [], [['text', '/agvoy']], [], []],
+    'agvoy_region' => [['regionNameSelected'], ['_controller' => 'App\\Controller\\AgvoyController::listName'], [], [['variable', '/', '[^/]++', 'regionNameSelected'], ['text', '/agvoy']], [], []],
     'owner_index' => [[], ['_controller' => 'App\\Controller\\OwnerController::index'], [], [['text', '/backoffice/owner/list']], [], []],
     'owner_new' => [[], ['_controller' => 'App\\Controller\\OwnerController::new'], [], [['text', '/backoffice/owner/new']], [], []],
     'owner_show' => [['id'], ['_controller' => 'App\\Controller\\OwnerController::show'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/backoffice/owner']], [], []],

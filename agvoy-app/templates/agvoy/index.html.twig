@@ -7,14 +7,25 @@
 <h3 align='center'>Bienvenue à l'agence Édredons & Déjeuners</h3>
 <br>
 <div align='center'>
+<h4><i>{{regionSelected}}</i></h4>
+<br>
 {% for room in rooms %}
-    <p>{{ room.summary}}</p>
+    {% for region in room.regions %}
+        {% if (regionSelected is null) %}
+            <p>{{ room.summary}}</p>
+            {% endif %}
+        {% if (region.name == regionSelected) %}
+            <p>{{ room.summary}}</p>
+        {% endif %}
+    {% endfor %}
 {% endfor %}
 
-<p>Region List :</p>
+{% endblock %}
+{% block footer %}
+<p><u>Region List :</u></p>
 
 {% for regionName in regions %}
-<button class='btn btn-primary'>{{regionName}}</button>
+<a href="{{ path('agvoy_region', { 'regionNameSelected': regionName}) }}" class='btn btn-outline-primary'>{{regionName}}</a>
 {% endfor %}
 
 {% endblock %}
