@@ -13,10 +13,10 @@
 {% for room in rooms %}
     {% for region in room.regions %}
         {% if (regionSelected is null) %}
-            <p><a href="{{path('room_show', {'id':room.id})}}" class='btn btn-info'>{{ room.summary}}</a></p>
+            <p><a href="{{path('room_show', {'id':room.id})}}" class='btn btn-outline-info'>{{ room.summary}}</a></p>
         {% endif %}
         {% if (region.name == regionSelected) %}
-            <p><a href="{{path('room_show', {'id':room.id})}}" class='btn btn-info'>{{ room.summary}}</a></p>
+            <p><a href="{{path('room_show', {'id':room.id})}}" class='btn btn-outline-info'>{{ room.summary}}</a></p>
         {% endif %}
     {% endfor %}
 {% endfor %}
