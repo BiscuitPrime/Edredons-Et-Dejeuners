@@ -36,8 +36,9 @@ class AppFixtures extends Fixture
 
         $room = new Room();
         $room->setSummary("Beau poulailler ancien à Évry");
-        $room->setDescription("très joli espace sur paille");
-        $room->setPrice(34,56);
+        $room->setDescription("Très joli espace sur paille");
+        $room->setPrice("34 €");
+        $room->setCapacity("3");
         // On peut plutôt faire une référence explicite à la référence
         // enregistrée précédamment, ce qui permet d'éviter de se
         // tromper d'instance de Region :

@@ -93,7 +93,7 @@ class AgvoyController extends AbstractController
         }
         return $this->render('agvoy/basket.html.twig', [
             'rooms'=>$roomBasketList,
-            'Message'=>$message
+            'Message'=>$message,
         ]);
     }
 }

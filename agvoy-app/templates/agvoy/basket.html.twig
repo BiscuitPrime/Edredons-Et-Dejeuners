@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Votre Panier{% endblock %}
 {% block body %}
 <p><h1 align='center'>{{Message}}</h1></p>
 
 <table class="table">
     <thead>
         <tr>
-            <th>Summary</th>
+            <th>Résumé</th>
             <th>Description</th>
-            <th>Capacity</th>
-            <th>Superficy</th>
-            <th>Price</th>
-            <th>Address</th>
-            <th>actions</th>
+            <th>Capacité</th>
+            <th>Superficie</th>
+            <th>Prix</th>
+            <th>Addresse</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -24,12 +26,11 @@
             <td>{{ room.price }}</td>
             <td>{{ room.address }}</td>
             <td>
-                <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>show</a>
+                <a href="{{ path('room_show', {'id': room.id}) }}" class='btn btn-outline-primary'>Détails</a>
                 <a href="{{ path('room_mark', {'id':room.id})}}" class='btn btn-outline-warning'>Enlever du panier</a>
             </td>
         </tr>
     {% endfor %}
     </tbody>
 </table>
-
 {% endblock %}
