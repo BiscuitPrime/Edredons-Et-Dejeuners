@@ -270,7 +270,7 @@
       <parameter key="main" type="collection">
         <parameter key="items" type="collection">
           <parameter key="roomList" type="collection">
-            <parameter key="label">Room List</parameter>
+            <parameter key="label">Liste des Édredons</parameter>
             <parameter key="route">room_index</parameter>
             <parameter key="is_divider">false</parameter>
             <parameter key="route_parameters" type="collection"/>
@@ -278,7 +278,7 @@
             <parameter key="items" type="collection"/>
           </parameter>
           <parameter key="regionList" type="collection">
-            <parameter key="label">Region List</parameter>
+            <parameter key="label">Liste des Régions</parameter>
             <parameter key="route">region_index</parameter>
             <parameter key="is_divider">false</parameter>
             <parameter key="route_parameters" type="collection"/>
@@ -306,7 +306,7 @@
       <parameter key="backoffice" type="collection">
         <parameter key="items" type="collection">
           <parameter key="roomList" type="collection">
-            <parameter key="label">Room List</parameter>
+            <parameter key="label">Liste des Édredons</parameter>
             <parameter key="route">room_index</parameter>
             <parameter key="is_divider">false</parameter>
             <parameter key="route_parameters" type="collection"/>
@@ -314,7 +314,7 @@
             <parameter key="items" type="collection"/>
           </parameter>
           <parameter key="regionList" type="collection">
-            <parameter key="label">Region List</parameter>
+            <parameter key="label">Liste des Régions</parameter>
             <parameter key="route">region_index</parameter>
             <parameter key="is_divider">false</parameter>
             <parameter key="route_parameters" type="collection"/>
@@ -322,7 +322,7 @@
             <parameter key="items" type="collection"/>
           </parameter>
           <parameter key="ownerList" type="collection">
-            <parameter key="label">Owner List</parameter>
+            <parameter key="label">Liste des Propriétaires</parameter>
             <parameter key="route">owner_index</parameter>
             <parameter key="is_divider">false</parameter>
             <parameter key="route_parameters" type="collection"/>

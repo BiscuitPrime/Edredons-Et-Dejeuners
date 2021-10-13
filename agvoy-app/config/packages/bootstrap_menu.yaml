@@ -3,10 +3,10 @@ bootstrap_menu:
     main:
       items:
         roomList:
-          label: 'Room List'
+          label: 'Liste des Édredons'
           route: 'room_index'
         regionList:
-          label: 'Region List'
+          label: 'Liste des Régions'
           route: 'region_index'
         basket:
           label: 'Panier'
@@ -17,13 +17,13 @@ bootstrap_menu:
     backoffice:
       items:
         roomList:
-          label: 'Room List'
+          label: 'Liste des Édredons'
           route: 'room_index'
         regionList:
-          label: 'Region List'
+          label: 'Liste des Régions'
           route: 'region_index'
         ownerList:
-          label: 'Owner List'
+          label: 'Liste des Propriétaires'
           route: 'owner_index'
         basket:
           label: 'Panier'
